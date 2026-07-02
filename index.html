@@ -562,7 +562,7 @@ function init() {
 function renderCategories() {
   const row = document.getElementById('catRow');
   row.innerHTML = getCategories().map(cat =>
-    `<button class="cat-pill ${cat === activeCat ? 'active' : ''}" onclick="setCat('${cat.replace(/'/g, "\'")}')">${cat}</button>`
+    `<button class="cat-pill ${cat === activeCat ? 'active' : ''}" onclick="setCat('${cat.replace(/'/g, "\\'")}')">${cat}</button>`
   ).join('');
 }
 
@@ -605,7 +605,7 @@ function renderPhrases() {
       : '';
     const customBadge = isCustom ? '<span class="custom-badge">MY PHRASE</span>' : '';
     return `
-      <div class="phrase-card" style="position:relative;" onclick="speakPhraseText('${secondary.replace(/'/g, "\'")}', '${isEnTl ? TL_LANG : 'en-US'}')">
+      <div class="phrase-card" style="position:relative;" onclick="speakPhraseText('${secondary.replace(/'/g, "\\'")}', '${isEnTl ? TL_LANG : 'en-US'}')">
         ${deleteBtn}
         <div class="phrase-tag">${p.cat}${customBadge}</div>
         <div class="phrase-en">${primaryFlag} ${primary}</div>
